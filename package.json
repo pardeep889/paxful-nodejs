@@ -1,0 +1,59 @@
+{
+  "_from": "paxful-nodejs",
+  "_id": "paxful-nodejs@0.0.3",
+  "_inBundle": false,
+  "_integrity": "sha1-b+gyvYyOgmpOGNLk9NoQAJJLEeQ=",
+  "_location": "/paxful-node",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "paxful-nodejs",
+    "name": "paxful-nodejs",
+    "escapedName": "paxful-nodejs",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/paxful-nodejs/-/paxful-node-0.0.3.tgz",
+  "_shasum": "6fe832bd8c8e826a4e18d2e4f4da1000924b11e4",
+  "_spec": "paxful-nodejs",
+  "_where": "/home/pardeep/Desktop/",
+  "author": {
+    "name": "Anthony Mayfield",
+    "url": "https://github.com/pardeep889"
+  },
+  "bugs": {
+    "url": "https://github.com/pardeep889/paxful-nodejs/issues",
+    "email": "pardeep889@hotmail.com"
+  },
+  "bundleDependencies": false,
+  "contributors": [],
+  "dependencies": {
+    "node-fetch": "*"
+  },
+  "deprecated": false,
+  "description": "paxful API wrapper for NodeJS",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "homepage": "https://github.com/pardeep889/paxful-nodejs",
+  "keywords": [
+    "paxful",
+    "api",
+    "btc",
+    "bitcoin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "paxful-nodejs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pardeep889/paxful-nodejs.git"
+  },
+  "version": "0.0.1"
+}
