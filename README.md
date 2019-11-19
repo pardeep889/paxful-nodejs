@@ -1,4 +1,4 @@
-Node LocalBitcoins
+Node Paxful API Refernce
 ===========
 
 NodeJS Client Library for the Paxful API
