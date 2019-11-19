@@ -9,13 +9,21 @@ Example Usage:
 
 ```javascript
     const Paxful = require("paxful-nodejs");
+
+    let paxful = new Paxful();
     const key = "YOUR_KEY_GOES_HERE";
     const secret = "YOUR_SECRET_GOES_HERE";
     const payload = "&username=pardeep889"; // empty or null when not required :)
     const method = "POST";
+
+
+    async function callPaxfulApi(){
     const data = paxful.hit(key,secret,payload,method);
     let my = await data.then(resp => resp);
-    console.log(my); // LOG THE USER DATA
+    console.log(my)
+    }
+    callPaxfulApi();
+
 
 ```
 
