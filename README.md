@@ -13,7 +13,7 @@ Example Usage:
     let paxful = new Paxful();
     const key = "YOUR_KEY_GOES_HERE";
     const secret = "YOUR_SECRET_GOES_HERE";
-    const payload = "&username=pardeep889"; // empty or null when not required :)
+    const payload = "username=pardeep889"; // empty or null when not required :)
     const method = "POST";
 
 

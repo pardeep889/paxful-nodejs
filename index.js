@@ -1,17 +1,41 @@
 const fetch = require('node-fetch');
-
+const CryptoJS = require("crypto-js");
 function Paxful(){
     var self = this;
-    function hit(key, secret, payload, method){
+    function hit(key, secret, payload, method){        
         return new Promise((resolve, reject) => {
+            let secretKey = secret,
+			payloadData = payload,
+            body = 'apikey=' + key + '&nonce=' + Date.now();
+            payloadData = payloadData.split("\n").map(Function.prototype.call, String.prototype.trim);            
+            var tmp = [];
+            for (var i in payloadData) {
+                if (payloadData[i].length > 0) {
+                    tmp.push(payloadData[i]);
+                }
+            }
+            payloadData = tmp;
+            delete tmp;
+            payloadData = payloadData.join('&');
+            if (payloadData.length) {
+                body += '&' + payloadData;
+            }
+            let seal = CryptoJS.HmacSHA256(body, secretKey);
+            var url = body + '&apiseal=' + seal;
             fetch("https://paxful.com/api/user/info", 
-            {"credentials":"omit","headers":
-            {"accept":"application/json","accept-language":"en-GB,en-US;q=0.9,en;q=0.8,fr;q=0.7",
-            "cache-control":"no-cache","content-type":"text/plain","pragma":"no-cache",
-            "sec-fetch-mode":"cors","sec-fetch-site":"cross-site"},
+            {
+            "credentials":"omit",
+            "headers":
+                {
+                "accept":"application/json",
+                "content-type":"text/plain",
+                "pragma":"no-cache",
+                "sec-fetch-mode":"cors",
+                "sec-fetch-site":"cross-site"
+                },
             "referrerPolicy":"no-referrer-when-downgrade",
-            "body":"apikey="+key+`&nonce=1574162642572${payload}&apiseal=${secret}`,
-            "method": method,"mode":"cors"
+            "body":url,
+            "method":method,
             })
             .then(res => res.json()) // expecting a json response
             .then(data => {

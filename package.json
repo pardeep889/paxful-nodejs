@@ -34,7 +34,8 @@
   "bundleDependencies": false,
   "contributors": [],
   "dependencies": {
-    "node-fetch": "*"
+    "crypto-js": "^3.1.9-1",
+    "node-fetch": "*"    
   },
   "deprecated": false,
   "description": "paxful API wrapper for NodeJS",
@@ -55,5 +56,5 @@
     "type": "git",
     "url": "git+https://github.com/pardeep889/paxful-nodejs.git"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
