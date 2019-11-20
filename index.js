@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const CryptoJS = require("crypto-js");
 function Paxful(){
     var self = this;
-    function hit(key, secret, payload, method){        
+    function hit(apiEndPoint, key, secret, payload, method){        
         return new Promise((resolve, reject) => {
             let secretKey = secret,
 			payloadData = payload,
@@ -22,7 +22,7 @@ function Paxful(){
             }
             let seal = CryptoJS.HmacSHA256(body, secretKey);
             var url = body + '&apiseal=' + seal;
-            fetch("https://paxful.com/api/user/info", 
+            fetch(`https://paxful.com/api/${apiEndPoint}`,
             {
             "credentials":"omit",
             "headers":
